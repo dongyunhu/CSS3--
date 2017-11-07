@@ -80,6 +80,7 @@ ___1.animation书写实例___
          background-size: auto 100%;
          animation: panoramic 10s linear infinite alternate;
          animation-play-state: paused; /***** paused 指播放动画暂停 ****/
+          /**background-size: cover; 可以让图片在容器改变大小时仍然保持填充**/
       }
       .panoramic:hover,
       .panoramic:focus {
@@ -125,9 +126,7 @@ ___03.让一个元素居中显示___
     /*******IE8不兼容*************************/
 
 
-___04.background-size: cover; 可以让图片在容器改变大小时仍然保持填充___
-
-    给浮动图片应用shape-outside，让文本围绕一个圆排列,实现文字环绕图片
+___04.给浮动图片应用shape-outside，让文本围绕一个圆排列,实现文字环绕图片
 
     img{  
          float: left;
@@ -153,7 +152,10 @@ ___05.给图片设置倒影___
 ___06.移动端的平均分配居中显示___
 
      table
-     也许这个技术会被很多人忘记，不过用在移动端确实不错，关键是没有兼容问题的。主要设置父元素的display: table; table-layout:   fixed; width: 100%;，然后   设置子元素为  display: table-cell;即可。
+     也许这个技术会被很多人忘记，不过用在移动端确实不错，关键是没有兼容问题的。
+     主要设置父元素的display: table; table-layout:   fixed; width: 100%;，
+     然后   
+     设置子元素为  display: table-cell;即可。
 
 ___07.元素全部居中___
 
@@ -246,7 +248,7 @@ ___15.如果想让动画保持突然终止时的状态，就要使用animation-p
 
      上面的代码指定，没有鼠标没有悬停时，动画状态是暂停；一旦悬停，动画状态改为继续播放。
 
-___16.<a>链接嵌套___
+___16. a 链接嵌套___
 
     *在前端开发当中，超链接<a>标签嵌套<a>标签会出问题：浏览器解析的时候，将它们解析成不嵌套的。
      我们是存在一定的黑魔法的。那就是给<a>标签内部的<a>标签外添加一个<object>标签
