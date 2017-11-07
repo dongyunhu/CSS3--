@@ -300,6 +300,23 @@ ___19.clearfix清除浮动___
     .clearfix:after{clear:both;} 
     .clearfix{ *zoom:1;/*IE/7/6*/ }
 
+___20.首字下沉___
+
+    //首行文字为大写
+    p::first-line {
+      text-transform: uppercase;
+    }
+    //首个文字为下沉
+    p::first-letter {
+      font-size: 3em;
+      border: 1px solid black;
+      background: red;
+      float: left;
+      padding: 2px;
+      margin-right: 4px;
+    }
+    
+    
 ___app___
 
     //竖屏时使用的样式
