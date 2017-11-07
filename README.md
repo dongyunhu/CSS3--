@@ -4,6 +4,8 @@ ___常用全局设置___
     让 box-sizing 继承自 html ：
     html {
       box-sizing: border-box;
+      -moz-box-sizing:border-box; /* Firefox */
+      -webkit-box-sizing:border-box; /* Safari */
     }
 
     给可点击元素添加手型光标
