@@ -7,7 +7,10 @@ ___常用全局设置___
       -moz-box-sizing:border-box; /* Firefox */
       -webkit-box-sizing:border-box; /* Safari */
     }
-
+    
+     实现文字随着视窗宽度变化大小
+     font-size: calc(2.92815vw + 3.86614px);
+    
     给可点击元素添加手型光标
     a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
            cursor: pointer;
