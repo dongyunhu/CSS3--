@@ -7,9 +7,14 @@ ___常用全局设置___
       -moz-box-sizing:border-box; /* Firefox */
       -webkit-box-sizing:border-box; /* Safari */
     }
-    
-     实现文字随着视窗宽度变化大小
-     font-size: calc(2.92815vw + 3.86614px);
+     实现文字随着视窗宽度变化大小
+    font-size: calc(2.92815vw + 3.86614px);
+    实例
+    h1 { font-size: 22px; } 
+        @media (min-width: 576px) { h1 { font-size: calc(1.04166667vw + 16px); } } 
+        @media (min-width: 768px) { h1 { font-size: calc(4.46428571vw - 10.28571429px); } } 
+        @media (min-width: 992px) { h1 { font-size: 34px; }
+    }
     
     给可点击元素添加手型光标
     a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
