@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	*{
+	  margin: 0;
+	  padding: 0;
+	}
+  //复选按钮
+	.form-check {
+	    white-space: nowrap;
+	    cursor: pointer;
+	    outline: none;
+	    display: inline-block;
+	    line-height: 1;
+	    position: relative;
+	    vertical-align: middle;
+	}
+  .form-check-icon{
+    display: inline-block;
+    position: relative;
+    border: 1px solid #dcdfe6;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    z-index: 1;
+    transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+  }
+ .form-check-icon:after {
+        box-sizing: content-box;
+        content: "";
+        border: 2px solid #fff;
+        border-left: 0;
+        border-top: 0;
+        height: 9px;
+        left: 5px;
+        position: absolute;
+        top: 1px;
+        transform: rotate(45deg) scaleY(0);
+        width: 3px;
+        transition: transform .15s cubic-bezier(.71,-.46,.88,.6) .05s;
+        transform-origin: center;
+    }
+  .form-check-input{
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    left: 0;
+    z-index: 10;
+  }
+ 
+ .form-check-input:hover {
+      cursor: pointer;
+    }
+  .form-check-input:checked + .form-check-icon{
+    background-color: #ff6600;
+    border-color: #ff6600;
+  }
+
+  .form-check-input:checked + .form-check-icon:after{
+    transform: rotate(45deg) scaleY(1);
+  }
+</style>
+</head>  
+<body>
+     <h2>checkbox自定义样式 </h2>
+     <span class="form-check">
+        <input class="form-check-input" type="checkbox">
+        <i class="form-check-icon"></i>
+        <label>复选按钮</label>
+     </span>
+</body>
+</html>  
