@@ -1,4 +1,5 @@
 ## transform 使用 ##
+参考实例：http://www.daqianduan.com/example?pid=2959
 
 transform的属性包括：rotate() / skew() / scale() / translate(,) ，分别还有x、y之分，比如：rotateX() 和 rotateY() ，以此类推。
 
