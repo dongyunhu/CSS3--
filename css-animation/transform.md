@@ -24,7 +24,7 @@ transform的属性包括：rotate() / skew() / scale() / translate(,) ，分别�
 transform的常用属性就是这些了，下面我们借助transition的帮忙来演示一个关于css3 transform的综合实例：
 
     .demo_transform5{-webkit-transition:all 1s ease-in-out;-moz-transition:all 1s ease-in-out}
-.demo_transform5:hover{-webkit-transform:rotate(360deg) skew(-20deg) scale(3.0) translate(100px,0);-moz-transform:rotate(360deg) skew(-20deg)scale(3.0) translate(100px,0)}
+    .demo_transform5:hover{-webkit-transform:rotate(360deg) skew(-20deg) scale(3.0) translate(100px,0);-moz-transform:rotate(360deg) skew(-20deg)scale(3.0) translate(100px,0)}
 
 ### animation css3 持续旋转360 ###
       <style>
