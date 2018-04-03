@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h3>子元素不定宽高实现水平垂直居中</h3>
+  <!--
+  父： display: grid;
+  子： align-self: center; justify-self: center;
+   -->
+  <div style="width: 300px; height: 300px; border: 1px solid red; display: grid;">
+     <div style="background: #ddd; align-self: center; justify-self: center;">
+        父： display: grid;
+        </br>
+        子： align-self: center; justify-self: center; </div>
+  </div>
+
+   <!--
+  父：position: relative;
+  子： position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+   -->
+  <div style="width: 300px; height: 300px; border: 1px solid blue; position: relative;">
+      <div style="background: #ddd; position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+          父：position: relative;
+          </br>
+          子： position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+          <p style="color: red;">注：自身会改变</p>
+      </div>
+   </div>
+
+   <!--
+    父：display: flex; justify-content: center; align-items: center;
+    子：
+    -->
+    <div style="width: 300px; height: 300px; border: 1px solid blue; display: flex; justify-content: center; align-items: center;">
+      <div style="background: orange; ">
+          父：display: flex; justify-content: center; align-items: center;
+        </br>
+          子：
+      </div>
+    </div>
+
+     <!--
+      父：height = line-height
+      子：
+     -->
+      <div style="width: 300px; height: 300px; border: 1px solid #f00; line-height: 300px; text-align: center;">
+         <div style="">  父：height = line-height</div>
+      </div>
+
+      <!--
+      父：display: table-cell; text-align: center;vertical-align: middle;
+      子：
+     -->
+      <div style="width: 300px; height: 300px; border: 1px solid orange; display: table-cell; text-align: center;vertical-align: middle;">
+         <div style="background: #ddd;">css 父：display: table-cell; text-align: center;vertical-align: middle;</div>
+      </div>
+
+      <!--
+      父：
+      子：
+     -->
+      <table>
+        <tbody>
+          <tr>
+            <td style="text-align: center; width: 200px; height: 200px; border: 1px solid red;">
+              <div style="background: #ddd;">table 表格 td 中div; 自身居中属性</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+     <h3>定宽高定位居中</h3>
+     <div style="width: 300px; height: 300px; border: 1px solid blue; position: relative;">
+        <div style="width:50px; height: 50px; background: purple; position: absolute; top: 50%; left: 50%; margin-top: -25px; margin-left: -25px; ">11111</div>
+     </div>
+     <div style="width: 300px; height: 300px; border: 1px solid blue; position: relative;">
+        <div style="width:50px; height: 50px; background: purple; position: absolute; top: 0; left: 0; right:0; bottom:0; margin: auto;">position: absolute; top: 0; left: 0; right:0; bottom:0; margin: auto;</div>
+     </div>
+
+
+     <style>
+        ul li { list-style: none; }
+          .test{width:100px;height:100px;margin:10px;border:1px solid #aaa;}
+          .lr-tb{-webkit-writing-mode:horizontal-tb;writing-mode:lr-tb;writing-mode:horizontal-tb;}
+          .tb-rl{-webkit-writing-mode:vertical-rl;writing-mode:tb-rl;writing-mode:vertical-rl;}
+          .tb-lr{-webkit-writing-mode:vertical-lr;writing-mode:tb-rl;writing-mode:vertical-lr;}
+      </style>
+      <h3>拓展文字排列</h3>
+        <div class="test lr-tb">本段文字将按照水平从左到右的书写方向进行流动。</div>
+        <div class="test tb-rl">本段文字将按照垂直从右到左的书写方向进行流动。</div>
+        <div class="test tb-lr">本段文字将按照垂直从左到右的书写方向进行流动。</div>
+</body>
+</html>
