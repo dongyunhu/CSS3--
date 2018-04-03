@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/jquery.min.js"></script>
+
+</head>
+<body>
+
+<style>
+
+  /* transition  是动画的关键存在 */
+  .box1 {
+    position: relative;
+  }
+
+  .left {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+
+    transition: all 0.8s ;
+  }
+  .right {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+
+    transition: all 0.8s ;
+  }
+
+  .box1.animate .left{
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  .box1.animate .right{
+    transform: translateY(300px);
+    opacity: 0;
+  }
+
+
+
+ .box2{
+    transition: all 3s ;
+  }
+  .box2.animate {
+    transform: rotate(300deg);
+  }
+
+</style>
+  <div class="box1 animate" style="width:300px; height:300px; border: 1px solid #333; overflow: hidden;">
+      <div class="left" style="width:100px; height: 50px; background:pink;"></div>
+      <div class="right" style="width:100px; height: 50px; background:blue;"></div>
+  </div>
+
+  <div style="height: 600px;"></div>
+
+  <div class="box2 " style="width:300px; height:300px; border: 1px solid #333; overflow: hidden;">
+    <div style="width:100px; height: 50px; background:blueviolet;"></div>
+  </div>
+</body>
+</html>
+<script>
+    $(function(){
+      // 必须动态来给与动画 animation
+      $('.box1').animate({"top":0},300,function(){
+        $(".box1").removeClass("animate");
+      });
+
+      //获取屏幕滚动状态， 动态添加动画类
+      $(document).scroll(function(){
+        var a = $(document).scrollTop();
+        console.log(a)
+        if(a == 0) {
+          $(".box1").removeClass("animate");
+        }else if(a > 200) {
+          $(".box2").addClass("animate");
+        } else {
+          $(".box1").addClass("animate");
+          $(".box2").removeClass("animate");
+        }
+      });
+    });
+</script>
