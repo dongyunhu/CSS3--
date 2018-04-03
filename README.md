@@ -34,7 +34,7 @@ ___常用全局设置___
          }
 
 ___1.animation书写实例___
-
+CSS3 里面 animation下有个animation-fill-mode 设定动画完成后的状态，默认是none 设为forwards 就可以在动画完成后定格在动画最后一帧
      .demo1 {
          width: 50px;
          height: 50px;
