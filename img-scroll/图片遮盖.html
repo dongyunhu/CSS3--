@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body { height: 100%; width: 100%; }
+    .box {
+      position: absolute;
+      min-width: 980px;
+      margin-left: 0px;
+      height: 1080px;
+      left: 0px;
+      width: 100%;
+    }
+
+    .aa { top: 0; }
+    .bb { top:  1080px; }
+    .cc { top: 2160px; }
+    .wrap { position: relative; width: 100%; height: 1080px; }
+
+    .text { width: 100%; position: absolute;  color: blue; top:  300px; bottom: 0;  z-index: 10;}
+
+    .div-a,.div-b,.div-c{    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    /* background: #ddd; */
+    overflow: hidden;
+    /* pointer-events: none; */
+    clip: rect(0px, 1257px, 1080px, 0px);}
+    /*
+    * 实现动态浏览器滚动，图片自适应大小，
+    * 动态计算赋值
+    * clip: rect(0px, 这个值 = 浏览器宽, 1080px, 0px);
+     */
+
+   .imgbox {     position: fixed;
+    pointer-events: none;
+    top: 0px;
+    transform-style: preserve-3d;
+    transform: translate3d(0px, 0px, 0px);
+    width: 100%;
+    height: 1080px;
+    left: 0px; }
+
+    img{
+        width: 100%;
+        height: 1080px;
+        object-fit: cover;
+    }
+  </style>
+  <script src="jquery.min.js"></script>
+  <script>
+    $(function(){
+
+      $(window).resize(function(){
+        var w = $(window).width();
+        $(".width").css("clip","rect( 0px, " + w + "px, 1080px, 0px )");
+      })
+    });
+  </script>
+</head>
+<body>
+  <!-- 绿色 -->
+  <div class="box aa">
+    <div class="wrap">
+      <div class="text">
+        <h2>asdfasfasdfasfdsadfsdf</h2>
+      </div>
+      <div class="width div-a">
+        <div class="imgbox">
+            <img src="img1.gif" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 白色 -->
+  <div class="box bb">
+    <div class="wrap">
+      <div class="text">
+        <h2>6465465465460546546546</h2>
+      </div>
+      <div class="width div-b">
+          <div class="imgbox">
+              <img src="img2.gif" alt="">
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="box cc">
+    <div class="wrap">
+        <div class="text">
+          <h2>撒打发撒旦发射点发阿斯蒂芬</h2>
+        </div>
+      <div class="width div-c">
+          <div class="imgbox">
+              <img src="img3.gif" alt="">
+          </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
